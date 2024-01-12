@@ -1,0 +1,41 @@
+.main {
+    display: flex;
+    justify-content: space-between;
+    .space {
+        position: relative;
+        top: 9px;
+        width: 5px;
+        height: 5px;
+        border-radius: 100%;
+        background-color: var(--background-color-light);
+        margin: 0 5px;
+    }
+    :is(p,a) {
+        margin: 0;
+        color: #718096;
+    }
+    a {
+        text-decoration: underline;
+    }
+}
+
+.info {
+    display: flex;
+}
+
+.tags {
+    display: flex;
+    .tag {
+        margin: 0 5px;
+        padding: 0px 3px;
+        background-color: var(--background-color-light);
+        border-radius: 5px;
+        p {
+            position: relative;
+            bottom: 1px;
+        }
+    }
+    .tag:first-child {
+        margin-left: 0;
+    }
+}

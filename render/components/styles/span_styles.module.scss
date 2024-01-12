@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+.h1 {
+    color: var(--text-color-title);
+}
+
+.p {
+    font-size: 18px;
+    margin: 0;
+    color: var(--text-color);
+    word-break: break-all;
+}
+
+.code > code {
+    font-size: 13px;
+    font-family: 'Fira Code', monospace;
+    background-color: var(--code-inline-background-color);
+    color: #abb2bf;
+    padding: 2px;
+    border-radius: 3px;
+}
+span > .code > code {
+    font-size: 16px;
+    background: none;
+    color: inherit;
+    padding: 0;
+    border-radius: 0;
+}
+.code_font > code {
+    font-size: 13px;
+    font-family: 'Fira Code', monospace;
+}
+
+.link, .link p {
+    margin: 0;
+    color: var(--color-primary);
+    word-break: break-all;
+}
+.link:not(h1 .link) {
+    font-size: 18px;
+}
+.link:hover {
+    text-decoration: underline;
+}
+
+.link_back {
+    text-decoration: underline;
+    color: #555;
+}
+
+.underline {
+    text-decoration: underline;
+}
+.delete {
+    text-decoration: line-through;
+}
+
+.br {
+    height: 10px;
+}
+
+.imageContainer {
+    margin: 25px 0;
+    padding: 5px;
+    box-shadow: var(--box-shadow);
+    span {
+        position: static !important;
+    }
+    img {
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+}
+
+.link_next {
+    display: flex;
+    justify-content: flex-end;
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        margin: 10px;
+        font-weight: 500;
+        font-size: 16px;
+        padding: 4px 10px;
+        border-radius: 8px;
+        border: none;
+        background-color: var(--color-primary);
+        color: #fff;
+        height: 40px;
+        width: 100px;
+        box-shadow: var(--color-primary)33 0px 7px 29px 0px;
+        transition: all 0.3s ease;
+        &:hover {
+            box-shadow: var(--color-primary)66 0px 7px 29px 0px;
+        }
+    }
+}
+
+.link_image {
+    position: relative;
+    &:not(:hover) .imageContainer {
+        pointer-events: none;
+        user-select: none;
+        opacity: 0;
+        bottom: calc(100% - 34px);
+    }
+    .imageContainer {
+        opacity: 1;
+        position: absolute;
+        user-select: auto;
+        pointer-events: auto;
+        bottom: calc(100% - 24px);
+        max-width: min(300px, calc(100vw - 20px));
+        max-height: min(300px);
+        background-color: var(--background-color);
+        z-index: 2;
+        transition: all 0.3s ease;
+    }
+}

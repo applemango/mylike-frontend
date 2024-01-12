@@ -1,0 +1,65 @@
+.main {
+    width: 100%;
+    border: var(--border);
+    border-radius: 6px;
+    margin: 15px 0;
+    padding: 15px;
+}
+
+.input_form_box {
+    display: flex;
+}
+
+.placeholder {
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+.input_form, .input_url {
+    &::placeholder {
+        color: var(--text-color-mini);
+        opacity: 0.5;
+    }
+    width: calc(100% - 20px);
+    height: 40px;
+    margin: 6px 10px;
+    border-radius: 6px;
+    font-size: 18px;
+    padding-left: 10px;
+    border: var(--border);
+    outline: none;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.submit {
+    cursor: pointer;
+    margin: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 4px 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: #232323;
+    color: #fff;
+    height: 40px;
+    width: 100px;
+    //box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+    &:hover {
+        //box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+.result > pre > code {
+    width: calc(100% - 20px);
+    max-height: 500px;
+    overflow: scroll;
+    word-break: break-all;
+    font-size: 13px;
+    font-family: 'Fira Code', monospace;
+    border-radius: 6px;
+    margin: 6px 10px;
+    border: var(--border);
+}

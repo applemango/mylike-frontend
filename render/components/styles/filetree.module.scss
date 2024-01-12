@@ -1,0 +1,55 @@
+.main {
+    width: 100%;
+    border: var(--border);
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px 0;
+}
+.hide {
+    opacity: 0.5;
+}
+.file {
+    padding: 8px 8px;
+    margin: 5px 0;
+    width: 100%;
+    //max-width: 200px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &:hover {
+        background-color: var(--background-color-hover);
+    }
+    > div {
+        display: flex;
+        align-items: center;
+        &.icon > svg {
+            margin: 0;
+        }
+    }
+    svg {
+        margin-right: 15px;
+        fill: rgb(102, 97, 97);
+    }
+    svg.svg_folder {
+        fill: rgb(63, 158, 253);
+    }
+    p {
+        margin: 0;
+        color: var(--text-color);
+    }
+}
+.folder_item:not(.main > .folder_item):not(div:not(.folder_item) > .folder_item > .folder_item) {
+    padding-left: 15px;
+}
+
+.file {
+    .icon_add {
+        fill: rgb(51, 168, 55);
+    }
+    .icon_change {
+        fill: rgb(138, 109, 40);
+    }
+}

@@ -1,0 +1,22 @@
+.bold {
+    font-weight: bold;
+}
+.italic {
+    font-style: italic;
+}
+.underline {
+    text-decoration: underline;
+}
+.highlight {
+    background-color: #5552;
+}
+.math {
+    background-color: red($color: #000000);
+}
+.code {
+    margin-left: 2px;
+    margin-right: 2;
+    padding: 2px 4px;
+    background-color: #5552;
+    border-radius: 4px
+}
