@@ -1,4 +1,5 @@
 import { req } from "@/lib/req"
+import { FormButton, Input, TextArea } from "./formTextarea"
 
 export const ArticleForm = ({}) => {
     const createArticle = async (form: FormData) => {
@@ -14,17 +15,9 @@ export const ArticleForm = ({}) => {
         return res
     }
     return <form action={createArticle}>
-        <label htmlFor="form-title">タイトル</label>
-        <input id="form-title" name="title" type="text" placeholder="title" />
-        <br />
-
-        <label htmlFor="form-description">詳細</label>
-        <input id="form-description" name="description" type="text" placeholder="description" />
-        <br />
-
-        <textarea placeholder="body" name="body" id="body" cols={30} rows={10} />
-        <br />
-
-        <button>投稿する</button>
+        <Input fontSize={32} name="title" />
+        <Input fontSize={24} name="description"/>
+        <TextArea />
+        <FormButton />
     </form>
 }
