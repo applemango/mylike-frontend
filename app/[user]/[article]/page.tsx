@@ -7,10 +7,17 @@ const PageArticle = async ({ params }: {
     params: { user: string, article: number }
 }) => {
     const article = (await req<{article: any}>(`/article/${params.article}`))?.article
-    return <div>
+    return <div style={{
+        width: "80%",
+        maxWidth: "800px",
+        margin: "0 auto",
+    }}>
         <h1>{article.title}</h1>
-        <h2>{article.description}</h2>
-        <MDRenderV2 md={article.body.split("\\n")} />
+        <p>{article.description}</p>
+        <MDRenderV2 md={article.body.split("\n").reduce((acc: Array<string>, v: string)=> {
+            acc = acc.concat(v.split("\\n"))
+            return acc
+        },[])} />
         <Link href="/">back</Link>
     </div>
 }
