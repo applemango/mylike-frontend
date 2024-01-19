@@ -28,12 +28,14 @@ export const req = async <T>(url: string, option?: ReqOptions): Promise<T | null
         "referrerPolicy": "strict-origin-when-cross-origin",
         "body": option?.body ? option?.isJSON === false ? option.body : JSON.stringify(option.body) : null,
         "method": option?.method || "GET",
-        "credentials": "include"
+        "credentials": "include",
+        cache: "no-store"
     }
     const headerSSR = {
         "headers": headerHeader,
         "body": option?.body ? option?.isJSON === false ? option.body : JSON.stringify(option.body) : null,
         "method": option?.method || "GET",
+        cache: "no-store"
     }
     try {
         const _res = await fetch(option?.baseUrl ? `${option.baseUrl}${url}` : `http://127.0.0.1:3000${url}`, option?.isSSR ? headerSSR : header)
