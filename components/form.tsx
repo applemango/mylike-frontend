@@ -1,6 +1,23 @@
 import { req } from "@/lib/req"
 import { FormButton, Input, TextArea } from "./formTextarea"
 
+export const ArticleComment = ({}) => {
+    const createArticle = async (form: FormData) => {
+        "use server"
+        const res = await req("/article", {
+            method: "POST",
+            body: {
+                body: form.get("body"),
+            }
+        })
+        return res
+    }
+    return <form action={createArticle}>
+        <TextArea />
+        <FormButton />
+    </form>
+}
+
 export const ArticleForm = ({}) => {
     const createArticle = async (form: FormData) => {
         "use server"
