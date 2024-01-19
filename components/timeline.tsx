@@ -3,8 +3,8 @@ import Link from "next/link"
 import { ReactElement } from "react"
 import { ArticleForm } from "./form"
 
-export const TimeLine = ({ articles }:{
-    articles: Array<Article>
+export const TimeLineContainer = ({ children }:{
+    children: any
 }) => {
     return <div style={{
         width: "80%",
@@ -12,8 +12,17 @@ export const TimeLine = ({ articles }:{
         margin: "0 auto",
         borderRight: "1px solid #eee",
         borderLeft: "1px solid #eee",
-        minHeight: "100dvh"
+        minHeight: "100dvh",
+        paddingBottom: 64
     }}>
+        {children}
+    </div>
+}
+
+export const TimeLine = ({ articles }:{
+    articles: Array<Article>
+}) => {
+    return <TimeLineContainer>
         <TimeLineBorderContainer>
             <ArticleForm />
         </TimeLineBorderContainer>
@@ -24,14 +33,14 @@ export const TimeLine = ({ articles }:{
                 cursor: "pointer"
             }}>Show {Math.floor(Math.random() * 1000)} articles</p>
         </TimeLineBorderContainer>
-        {articles.map((article)=> <TimeLineBorderContainer>
+        {articles.map((article) => <TimeLineBorderContainer>
             <ArticleSummary article={article} />
         </TimeLineBorderContainer>)}
-    </div>
+    </TimeLineContainer>
 }
 
 export const TimeLineBorderContainer = ({ children }:{
-    children: ReactElement
+    children: any
 }) => {
     return <div style={{
         borderBottom: "1px solid #eee",
