@@ -1,3 +1,4 @@
+import { ArticleEditFormCore } from "@/components/edit"
 import { ArticleComment, ArticleForm } from "@/components/form"
 import { TimeLineBorderContainer, TimeLineContainer } from "@/components/timeline"
 import { req } from "@/lib/req"
@@ -42,20 +43,14 @@ const PageArticle = async ({ params }: {
                 return acc
             }, [])} />
         </TimeLineBorderContainer>
-        <TimeLineBorderContainer>
-            <p style={{
-                textAlign: "center",
-                margin: 0,
-                cursor: "pointer"
-            }}>Edit</p>
-        </TimeLineBorderContainer>
-        <TimeLineBorderContainer>
+        <ArticleEditFormCore />
+        {/*<TimeLineBorderContainer>
             <p style={{
                 textAlign: "center",
                 margin: 0,
                 cursor: "pointer"
             }}>Comment</p>
-        </TimeLineBorderContainer>
+        </TimeLineBorderContainer>*/}
         <TimeLineBorderContainer>
             <ArticleComment />
         </TimeLineBorderContainer>
