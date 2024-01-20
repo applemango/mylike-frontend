@@ -13,6 +13,7 @@ export const ArticleEditFormCore = () => {
         padding: "16px"
     }}>
         <motion.div animate={{
+            overflow: "hidden",
             height: open ? 0 : "auto",
             opacity: open ? 0 : 1
         }}>

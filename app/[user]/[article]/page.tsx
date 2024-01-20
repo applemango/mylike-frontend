@@ -52,7 +52,7 @@ const PageArticle = async ({ params }: {
             }}>Comment</p>
         </TimeLineBorderContainer>*/}
         <TimeLineBorderContainer>
-            <ArticleComment />
+            <ArticleComment article={article} />
         </TimeLineBorderContainer>
     </TimeLineContainer>
     return <div style={{

@@ -1,11 +1,14 @@
 import { req } from "@/lib/req"
 import { FormButton, Input, TextArea } from "./formTextarea"
 import { ArticleEditFormCore } from "./edit"
+import { Article } from "@/lib/type"
 
-export const ArticleComment = ({}) => {
+export const ArticleComment = ({article}:{
+    article: Article
+}) => {
     const createArticle = async (form: FormData) => {
         "use server"
-        const res = await req("/article", {
+        const res = await req(`/article/comment/${article.id}`, {
             method: "POST",
             body: {
                 body: form.get("body"),
